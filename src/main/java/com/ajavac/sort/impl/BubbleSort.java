@@ -14,11 +14,8 @@ public class BubbleSort implements Sort {
     public <T extends Comparable<T>> List<T> sortByAsc(List<T> origin, int begin, int end) {
         for (int i = begin; i < end; i++) {
             for (int j = i + 1; j < end + 1; j++) {
-                T temp = origin.get(i);
-                T next = origin.get(j);
-                if (temp.compareTo(next) > 0) {
-                    origin.set(i, next);
-                    origin.set(j, temp);
+                if (compare(origin, i, j) > 0) {
+                    swap(origin, i, j);
                 }
             }
         }
@@ -29,11 +26,8 @@ public class BubbleSort implements Sort {
     public <T extends Comparable<T>> List<T> sortByDesc(List<T> origin, int begin, int end) {
         for (int i = begin; i < end; i++) {
             for (int j = i + 1; j < end + 1; j++) {
-                T temp = origin.get(i);
-                T next = origin.get(j);
-                if (temp.compareTo(next) < 0) {
-                    origin.set(i, next);
-                    origin.set(j, temp);
+                if (compare(origin, i, j) < 0) {
+                    swap(origin, i, j);
                 }
             }
         }
