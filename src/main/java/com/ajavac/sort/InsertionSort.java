@@ -24,8 +24,11 @@ import com.ajavac.util.SwapUtils;
 public class InsertionSort {
 
     public static int[] sort(int[] arrays) {
+        // 遍历数组
         for (int i = 1; i < arrays.length; i++) {
+            // 遍历有序区的数
             for (int j = i; j > 0; j--) {
+                // 若相邻元素前面的大于后面的,则交换,否则退出循环
                 if (arrays[j] < arrays[j - 1]) {
                     SwapUtils.swap(arrays, j, j - 1);
                 } else {

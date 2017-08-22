@@ -20,13 +20,19 @@ import com.ajavac.util.SwapUtils;
 public class SelectionSort {
 
     public static int[] sort(int[] arrays) {
-        for (int i = 0; i < arrays.length; i++) {
+        // 遍历数组
+        for (int i = 0; i < arrays.length - 1; i++) {
+            // 最小数组下标
             int min = i;
+            // 遍历无序区的数
             for (int j = i + 1; j < arrays.length; j++) {
+                // 找到更小的数
                 if (arrays[min] > arrays[j]) {
+                    // 记录下标
                     min = j;
                 }
             }
+            // 交换
             SwapUtils.swap(arrays, min, i);
         }
         return arrays;

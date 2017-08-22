@@ -19,7 +19,7 @@ public abstract class BaseSortTest {
 
     @Before
     public void before() {
-        origin = new Random(2333L).ints(100, 0, 10000).toArray();
+        origin = new Random(2333L).ints(10000, 0, 10000).toArray();
         expect = Arrays.copyOf(origin, origin.length);
         long temp = System.nanoTime();
         Arrays.sort(expect);

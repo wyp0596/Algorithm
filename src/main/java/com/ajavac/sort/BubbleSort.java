@@ -22,8 +22,11 @@ import com.ajavac.util.SwapUtils;
 public class BubbleSort {
 
     public static int[] sort(int[] arrays) {
-        for (int i = 0; i < arrays.length; i++) {
+        // 遍历数组
+        for (int i = 0; i < arrays.length - 1; i++) {
+            // 遍历无序区的数
             for (int j = 0; j < arrays.length - 1 - i; j++) {
+                // 若相邻的数,前面的比较大,则交换相邻的数
                 if (arrays[j] > arrays[j + 1]) {
                     SwapUtils.swap(arrays, j, j + 1);
                 }
