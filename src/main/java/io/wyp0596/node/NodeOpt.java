@@ -204,6 +204,50 @@ public class NodeOpt {
     }
 
     /**
+     * 求两链表相交的第一个公共节点
+     *
+     * @param h1  链表1头节点
+     * @param h2  链表2头节点
+     * @param <T> 数据类型
+     * @return 两链表相交的第一个公共节点
+     */
+    public static <T> Node<T> findIntersectNode(Node<T> h1, Node<T> h2) {
+        int len1 = listLength(h1);
+        int len2 = listLength(h2);
+        // 对齐链表
+        if (len1 > len2) {
+            for (int i = 0; i < len1 - len2; i++) {
+                h1 = h1.getNext();
+            }
+        } else {
+            for (int i = 0; i < len2 - len1; i++) {
+                h2 = h2.getNext();
+            }
+        }
+        while (h1 != null) {
+            if (h1 == h2) {
+                return h1;
+            }
+            h1 = h1.getNext();
+            h2 = h2.getNext();
+        }
+        return null;
+    }
+
+    public static <T> int listLength(Node<T> head) {
+        boolean hasCircle = hasCircle(head);
+        if (hasCircle) {
+            throw new UnsupportedOperationException();
+        }
+        int len = 0;
+        while (head != null) {
+            len++;
+            head = head.getNext();
+        }
+        return len;
+    }
+
+    /**
      * 根据列表数据创建链表
      *
      * @param dataList 一组有序数据
