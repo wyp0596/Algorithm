@@ -1,4 +1,4 @@
-package com.ajavac.util;
+package io.wyp0596.util;
 
 /**
  * 元素交换工具类

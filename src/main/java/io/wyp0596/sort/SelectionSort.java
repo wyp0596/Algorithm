@@ -1,6 +1,6 @@
-package com.ajavac.sort;
+package io.wyp0596.sort;
 
-import com.ajavac.util.SwapUtils;
+import io.wyp0596.util.SwapUtils;
 
 /**
  * 选择排序

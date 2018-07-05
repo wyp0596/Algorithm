@@ -1,4 +1,4 @@
-package com.ajavac.sort;
+package io.wyp0596.sort;
 
 /**
  * 归并排序

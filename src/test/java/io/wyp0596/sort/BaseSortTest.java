@@ -1,4 +1,4 @@
-package com.ajavac.sort;
+package io.wyp0596.sort;
 
 import org.junit.After;
 import org.junit.Assert;
@@ -19,7 +19,7 @@ public abstract class BaseSortTest {
 
     @Before
     public void before() {
-        origin = new Random(2333L).ints(100001, 0, 10000).toArray();
+        origin = new Random(2333L).ints(100, 0, 10000).toArray();
         expect = Arrays.copyOf(origin, origin.length);
         long temp = System.nanoTime();
         Arrays.sort(expect);
